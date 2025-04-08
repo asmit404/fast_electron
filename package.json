@@ -1,8 +1,13 @@
 {
   "name": "fast_electron",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "Electron app for fast.com",
+  "main": "./dist/main.js",
   "scripts": {
+    "start": "tsc && electron ./dist/main.js",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "dist": "electron-builder",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,11 +21,16 @@
     "url": "https://github.com/asmit404/fast_electron/issues"
   },
   "homepage": "https://github.com/asmit404/fast_electron#readme",
-  "description": "",
+  "build": {
+    "appId": "com.fast.speedtest",
+    "mac": {
+      "category": "public.app-category.utilities"
+    }
+  },
   "devDependencies": {
-    "@types/node": "^22.14.0",
-    "electron": "^35.1.4",
-    "electron-builder": "^26.0.12",
-    "typescript": "^5.8.3"
+    "electron": "^28.0.0",
+    "typescript": "^5.0.0",
+    "electron-builder": "^24.0.0",
+    "@types/node": "^20.0.0"
   }
 }
